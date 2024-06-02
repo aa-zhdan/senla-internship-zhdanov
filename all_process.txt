@@ -1,0 +1,9 @@
+UID        PID  PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+root         1     0  0   456  1188   2 10:08 ?        00:00:00 /init
+root        13     1  0   543   372   4 10:08 ?        00:00:00 /init
+root        14    13  0   545   372   4 10:08 ?        00:00:00 /init
+zhdanych    15    14  0  1552  5240   6 10:08 pts/0    00:00:00 -bash
+root       424     1  0   543   372   4 11:16 ?        00:00:00 /init
+root       425   424  0   545   372   4 11:16 ?        00:00:00 /init
+zhdanych   426   425  0  1552  5356   2 11:16 pts/1    00:00:00 -bash
+zhdanych   495   426  0  1869  3228   6 11:35 pts/1    00:00:00 ps -eF
