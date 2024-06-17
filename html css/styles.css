@@ -1,0 +1,32 @@
+body {
+    background-image: url('https://wp-s.ru/wallpapers/0/16/368588729441803/pryamougolgiki-seryj-sinij-fon.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.clear {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+}
+
+.submit {
+    background-color: #5f9ea0;
+    color: white;
+    border: none;
+}
