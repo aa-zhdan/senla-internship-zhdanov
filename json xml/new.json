@@ -1,0 +1,49 @@
+{
+	"first_name": "Иванов",
+	"last_name": "Иван",
+	"middle_name": "Иванович",
+	"age": 35,
+	"phone": [
+	{
+		"type": "Личный",
+		"number": 89739737373
+	},
+	{
+		"type": "Домашний",
+		"number": 84990090909
+	},
+	{
+		"type": "Рабочий",
+		"number": 84960060606
+	}
+	],
+	"email_addreses": [
+	{
+		"type": "Личный",
+		"email": "ivanov@addres-home.ru"
+	},
+	{
+		"type": "Рабочий",
+		"email": "ivanov@addres-work.ru"
+	}
+	],
+	"addreses": [
+	{
+		"addres-home":
+		{
+			"city": "Москва",
+			"street": "Каспийская",
+			"hause_number": "28к2",
+			"apartament_number": "32"
+		},
+			"addres-work":
+			{
+				"city": "Москва",
+				"street": "Большая Садовая",
+				"hause_number": "3",
+				"office_number": "10"
+			}
+
+}]
+}
+	

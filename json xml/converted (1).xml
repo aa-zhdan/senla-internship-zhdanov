@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+   <addreses>
+      <element>
+         <addres-home>
+            <apartament_number>32</apartament_number>
+            <city>Москва</city>
+            <hause_number>28к2</hause_number>
+            <street>Каспийская</street>
+         </addres-home>
+         <addres-work>
+            <city>Москва</city>
+            <hause_number>3</hause_number>
+            <office_number>10</office_number>
+            <street>Большая Садовая</street>
+         </addres-work>
+      </element>
+   </addreses>
+   <age>35</age>
+   <email_addreses>
+      <element>
+         <email>ivanov@addres-home.ru</email>
+         <type>Личный</type>
+      </element>
+      <element>
+         <email>ivanov@addres-work.ru</email>
+         <type>Рабочий</type>
+      </element>
+   </email_addreses>
+   <first_name>Иванов</first_name>
+   <last_name>Иван</last_name>
+   <middle_name>Иванович</middle_name>
+   <phone>
+      <element>
+         <number>89739737373</number>
+         <type>Личный</type>
+      </element>
+      <element>
+         <number>84990090909</number>
+         <type>Домашний</type>
+      </element>
+      <element>
+         <number>84960060606</number>
+         <type>Рабочий</type>
+      </element>
+   </phone>
+</root>
