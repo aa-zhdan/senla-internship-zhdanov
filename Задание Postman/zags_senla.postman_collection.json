@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "a9eb4a4e-1a26-44bc-ac95-e31a4c95425b",
+		"name": "zags_senla",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27140298",
+		"_collection_link": "https://cloudy-capsule-795795.postman.co/workspace/Team-Workspace~aff42435-afdc-4e6d-8b7a-82b412b199ca/collection/27140298-a9eb4a4e-1a26-44bc-ac95-e31a4c95425b?action=share&source=collection_link&creator=27140298"
+	},
+	"item": [
+		{
+			"name": "Создание заявки",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"let applicationid = responseJson.data.applicationid;\r",
+							"pm.environment.set(\"applicationid_variable\", applicationid);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mode\": \"birth\",\r\n    \"personalLastName\":\"Петров\",\r\n    \"personalFirstName\":\"Василий\",\r\n    \"personalMiddleName\":\"Васильевич\",\r\n    \"personalPhoneNumber\":\"1234567\",\r\n    \"personalNumberOfPassport\":\"123445\",\r\n    \"citizenLastName\":\"Петров\",\r\n    \"citizenFirstName\":\"Василий\",\r\n    \"citizenMiddleName\":\"Васильевич\",\r\n    \"citizenBirthDate\":\"2000-01-01\",\r\n    \"citizenNumberOfPassport\":\"123123\",\r\n    \"citizenGender\":\"Мужской\",\r\n    \"dateOfMarriage\":null,\r\n    \"newLastName\":null,\r\n    \"anotherPersonLastName\":null,\r\n    \"anotherPersonFirstName\":null,\r\n    \"anotherPersonMiddleName\":null,\r\n    \"birth_of_anotoherPerson\":null,\r\n    \"anotherPersonPassport\":null,\r\n    \"birth_place\":\"Москва\",\r\n    \"birth_mother\":\"Мать\",\r\n    \"birth_father\":\"Отец\",\r\n    \"death_dateOfDeath\":null,\r\n    \"death_placeOfDeath\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://regoffice.senla.eu//sendUserRequest",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"",
+						"sendUserRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение информации о статусе заявки",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://regoffice.senla.eu/getApplStatus/{{applicationid_variable}}",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"getApplStatus",
+						"{{applicationid_variable}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Регистрация админа",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseJson = pm.response.json();\r",
+							"let staffid = responseJson.data.staffid;\r",
+							"pm.environment.set(\"staffid_variable\", staffid);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"dateofbirth\": \"2000-01-02\",\r\n  \"personalFirstName\": \"Админов\",\r\n  \"personalLastName\": \"Админ\",\r\n  \"personalMiddleName\": \"Админович\",\r\n  \"personalNumberOfPassport\": \"1111111\",\r\n  \"personalPhoneNumber\": \"0000000000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://regoffice.senla.eu/sendAdminRequest",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"sendAdminRequest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение статуса заявки - Одобрена",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"applId\": {{applicationid_variable}},\r\n  \"staffid\": {{staffid_variable}},\r\n  \"action\": \"approved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://regoffice.senla.eu/requestProcess",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"requestProcess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Изменение статуса заявки - Отклонена",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"applId\": {{applicationid_variable}},\r\n  \"staffid\": {{staffid_variable}},\r\n  \"action\": \"rejected\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://regoffice.senla.eu/requestProcess",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"requestProcess"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Обновление статуса",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "senlatest",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://regoffice.senla.eu/getApplStatus/{{applicationid_variable}}",
+					"protocol": "https",
+					"host": [
+						"regoffice",
+						"senla",
+						"eu"
+					],
+					"path": [
+						"getApplStatus",
+						"{{applicationid_variable}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
